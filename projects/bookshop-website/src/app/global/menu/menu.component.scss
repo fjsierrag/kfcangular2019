@@ -1,0 +1,34 @@
+.bs-menu{
+  /* padding-top:15px; */
+  .nav-link{
+    position:relative;
+
+    &:after{
+      position:absolute;
+      left:0;
+      bottom:0;
+      height:4px;
+      width:100%;
+      background: var(--green);
+      content:"";
+      transform: scale(0);
+      transition: all 0.3s;
+    }
+    &.active,
+    &:hover{
+      &:after{
+        transform: scale(1);
+      }
+    }
+    /*
+    &.active{
+      border: solid var(--primary);
+      border-width: 0 0 4px;
+    }
+    &:hover:not(.active){
+      border: solid var(--green);
+      border-width: 0 0 4px;
+    }
+    */
+  }
+}

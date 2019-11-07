@@ -1,0 +1,126 @@
+header:
+    logo: /assets/images/logo.png
+    search:
+        icon: faSearch
+        placeholder: Search over 30 million book titles
+    util-nav
+        icons: faShoppingCart, faUser
+    menu: 
+        Home | Books | Magazines | Textbooks | Audiobooks | Recommeded
+home:
+    hero:
+        background: /assets/images/hero.png
+        deal:
+            image: /assets/images/deal.png
+            tag: back to school
+            title: special 50% off
+            text: for our student community
+        cta: get the deal
+    shop-features:
+        - quick delivery
+          icon: faTruckMoving
+          text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+        - pay with easy
+          icon: faCreditCard
+          text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+        - best deal
+          icon: faTags
+          text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+        - secured payment
+          icon: faShieldAlt
+          text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+
+shadows:
+
+    header:
+        box-shadow: 0 0 11px 2px rgba(0, 0, 0, 0.2);
+    header-bar:
+        box-shadow: 0 0 13px 1px rgba(0, 0, 0, 0.09);
+    shop-features:
+        box-shadow: 3px 5px 21px rgba(35, 35, 35, 0.15);
+    book:
+        box-shadow: 0 8px 18px rgba(56, 148, 208, 0.36);
+
+
+const books = [
+  {
+    id: 1,
+    title: 'Steve Jobs',
+    author: 'Walter Isaacson',
+    price: 29.22,
+    reviews: 368,
+    rating: 5,
+    description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip.',
+    image: '/assets/images/books/steve-jobs.jpg'
+  },
+  {
+    id: 2,
+    title: 'Big Magic',
+    author: 'Elizabeth Gilbert',
+    price: 14.99,
+    reviews: 368,
+    rating: 4,
+    description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip.',
+    image: '/assets/images/books/big-magic.jpg'
+  },
+  {
+    id: 3,
+    title: 'Frost Arch',
+    author: 'Kate Bloomfield',
+    price: 12.99,
+    reviews: 368,
+    rating: 3,
+    description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip.',
+    image: '/assets/images/books/frost-arch.jpg'
+  },
+  {
+    id: 4,
+    title: 'The Alchemist',
+    author: 'Paulo Coelho',
+    price: 14.99,
+    reviews: 368,
+    rating: 4,
+    description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip.',
+    image: '/assets/images/books/the-alchemist.jpg'
+  },
+  {
+    id: 5,
+    title: 'The Girl On The Train',
+    author: 'Paula Hawkins',
+    price: 29.22,
+    reviews: 368,
+    rating: 5,
+    description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip.',
+    image: '/assets/images/books/the-girl-on-the-train.jpg'
+  },
+  {
+    id: 6,
+    title: 'The Trials of Apollo',
+    author: 'Rick Riordan',
+    price: 14.99,
+    reviews: 368,
+    rating: 5,
+    description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip.',
+    image: '/assets/images/books/the-trials-of-apollo.jpg'
+  },
+  {
+    id: 7,
+    title: 'The Power of Habit',
+    author: 'Charles Duhigg',
+    price: 12.99,
+    reviews: 368,
+    rating: 5,
+    description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip.',
+    image: '/assets/images/books/the-power-of-habit.jpg'
+  },
+  {
+    id: 8,
+    title: 'The Crown',
+    author: 'Kiera Cass',
+    price: 14.99,
+    reviews: 368,
+    rating: 5,
+    description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip.',
+    image: '/assets/images/books/the-crown.jpg'
+  }
+];
