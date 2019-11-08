@@ -2,7 +2,7 @@
     <div>
         <ul class="nav justify-content-center">
             <li class="nav-item" *ngFor="let menuItem of menuItems">
-                <a class="nav-link" [href]="menuItem.path" >{{ menuItem.label }}</a>
+                <a class="nav-link" [routerLink]="menuItem.path" routerLinkActive="active" >{{ menuItem.label }}</a>
             </li>
         </ul>
     </div>
