@@ -15,6 +15,7 @@
     }
     &.active,
     &:hover{
+      color: var(--green);
       &:after{
         transform: scale(1);
       }

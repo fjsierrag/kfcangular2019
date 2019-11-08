@@ -11,8 +11,8 @@ import { UtilNavComponent } from './global/util-nav/util-nav.component';
 import { MenuComponent } from './global/menu/menu.component';
 import { FooterComponent } from './global/footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { HeroComponent } from './hero/hero.component';
-import { ShopFeaturesComponent } from './shop-features/shop-features.component';
+import { HeroComponent } from './home/hero/hero.component';
+import { ShopFeaturesComponent } from './home/shop-features/shop-features.component';
 
 @NgModule({
   declarations: [
