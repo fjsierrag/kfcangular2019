@@ -1,1 +1,7 @@
-<p>shop-features works!</p>
+<nav class="bs-shop-features">
+        <ul class="nav justify-content-center">
+            <li class="nav-item" *ngFor="let menuItem of menuItems">
+                <a class="nav-link" [href]="menuItem.path" >{{ menuItem.label }}</a>
+            </li>
+        </ul>
+</nav>

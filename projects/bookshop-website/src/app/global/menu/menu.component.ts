@@ -6,7 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-
+  menuItems = [
+    {path:"/home", label:"Home"},
+    {path:"/books", label:"Bome"},
+    {path:"/magazines", label:"Magazines"},
+    {path:"/textbooks", label:"Textbooks"},
+    {path:"/audiobooks", label:"Audiobooks"},
+    {path:"/recommended", label:"Recommended"}
+  ];
   constructor() { }
 
   ngOnInit() {
