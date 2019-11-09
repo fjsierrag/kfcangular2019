@@ -1,4 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
+import {HttpClientModule} from "@angular/common/http";
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome'
 import {NgModule} from '@angular/core';
 
@@ -11,6 +12,7 @@ import {UtilNavComponent} from './global/util-nav/util-nav.component';
 import {MenuComponent} from './global/menu/menu.component';
 import {FooterComponent} from './global/footer/footer.component';
 import {HomeModule} from "./home/home.module";
+import {NewsModule} from "./news/news.module";
 
 @NgModule({
     declarations: [
@@ -24,9 +26,11 @@ import {HomeModule} from "./home/home.module";
     ],
     imports: [
         BrowserModule,
+        HttpClientModule,
         AppRoutingModule,
         FontAwesomeModule,
-        HomeModule
+        HomeModule,
+        NewsModule
     ],
     providers: [],
     bootstrap: [AppComponent]

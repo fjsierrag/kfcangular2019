@@ -1,0 +1,4 @@
+<span class="bs-rating" *ngFor="let star of [1,2,3,4,5]">
+    <span *ngIf="star<=value">&#9733;</span>
+    <span *ngIf="star>value">&#9734;</span>
+</span>

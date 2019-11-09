@@ -1,0 +1,25 @@
+.bs-util-nav{
+margin-left:.5em;
+}
+
+.bs-util-nav__shopping-cart {
+  position:relative;
+  &:after{
+    position:absolute;
+    left:0;
+    bottom:0;
+    height:4px;
+    width:100%;
+    background: var(--red);
+    content:"";
+    transform: scale(0);
+    transition: all 0.3s;
+  }
+  &.active,
+  &:hover{
+    color: var(--red);
+    &:after{
+      transform: scale(1);
+    }
+  }
+}
