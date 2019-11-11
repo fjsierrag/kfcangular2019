@@ -1,0 +1,15 @@
+.bs-book{
+  display: flex;
+  &__image{
+    padding:1em;
+    margin-right: 2em;
+    width: 200px;
+  }
+  &__details{
+    //margin: 2em 0;
+  }
+  &__rating,
+  &__reviews{
+    margin-left:2em;
+  }
+}
