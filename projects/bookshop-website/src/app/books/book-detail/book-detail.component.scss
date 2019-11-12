@@ -1,3 +1,11 @@
 .bs-book-detail{
   margin-top:2em;
+  &__form{
+    display:flex;
+    width:600px;
+    .input-group,
+    .btn[type="submit"]{
+      width:auto;
+    }
+  }
 }

@@ -1,13 +1,18 @@
 <section class="bs-book-detail">
     <div class="bs-container">
         <app-book *ngIf="book$ | async as book" [book]="book">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <button class="btn btn-outline-secondary" type="button">Button</button>
-                    <button class="btn btn-outline-secondary" type="button">Button</button>
+            <form action="" class="bs-book-detail__form">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-danger" type="button" (click)="decrementQty()" >-</button>
+                    </div>
+                    <input type="number"name="qty" class="form-control" placeholder="" [(ngModel)]="quantity" >
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-success" type="button" (click)="incrementQty()">+</button>
+                    </div>
                 </div>
-                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
-            </div>
+                <button class="btn btn-primary" type="submit">Add to Cart</button>
+            </form>
         </app-book>
     </div>
 </section>

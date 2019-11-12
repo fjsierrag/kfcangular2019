@@ -11,6 +11,7 @@ import {Book} from "../../models/book";
 })
 export class BookDetailComponent implements OnInit {
   book$: Observable<Book>;
+  quantity: number=1;
   constructor(private route: ActivatedRoute, private bookService:BookService ) { }
 
 
@@ -21,4 +22,10 @@ export class BookDetailComponent implements OnInit {
 
   }
 
+  incrementQty(){
+    this.quantity++;
+  }
+  decrementQty(){
+    if(this.quantity>1)this.quantity--;
+  }
 }

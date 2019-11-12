@@ -9,6 +9,7 @@ import {Book} from "../../models/book";
 export class BookComponent implements OnInit {
   @Input() book:Book;
 
+
   constructor() { }
 
   ngOnInit() {
