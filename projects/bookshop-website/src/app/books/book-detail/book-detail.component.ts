@@ -17,8 +17,15 @@ export class BookDetailComponent implements OnInit {
 
   ngOnInit() {
     //Una forma de obtener el id  this.route.snapshot.paramMap
-    const { id } = this.route.snapshot.params;
-    this.book$ = this.bookService.getBookById(parseInt(id));
+    //const { id } = this.route.snapshot.params;
+    //this.book$ = this.bookService.getBookById(parseInt(id));
+
+    // Se puede subscribir al evento de cambio de URL para refrescar la aplicación
+    this.route.params.subscribe(params =>{
+      console.log(params);
+      const {id} = params;
+      this.book$ = this.bookService.getBookById(parseInt(id));
+    });
 
   }
 

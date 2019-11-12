@@ -13,6 +13,7 @@ import {MenuComponent} from './global/menu/menu.component';
 import {FooterComponent} from './global/footer/footer.component';
 import {HomeModule} from "./home/home.module";
 import {NewsModule} from "./news/news.module";
+import {SecurityModule} from "./security/security.module";
 
 @NgModule({
     declarations: [
@@ -30,7 +31,8 @@ import {NewsModule} from "./news/news.module";
         AppRoutingModule,
         FontAwesomeModule,
         HomeModule,
-        NewsModule
+        NewsModule,
+        SecurityModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
