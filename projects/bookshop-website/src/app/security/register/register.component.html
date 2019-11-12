@@ -5,8 +5,15 @@
                 <h3>Register</h3>
             </div>
             <div class="card-body">
-                <form action="">
-
+                <form>
+                    <div class="form-group">
+                        <label for="register-email">Email</label>
+                        <input class="form-control" id="register-email" type="email"
+                               name="email" [(ngModel)]="email" #emailField="ngModel" required email>
+                        <span *ngIf="emailField.errors && emailField.errors.required">Es requerido</span>
+                        <span *ngIf="emailField.errors && emailField.errors.email">Debe ser un email</span>
+                        <pre><code>{{emailField.errors | json}}</code></pre>
+                    </div>
                 </form>
             </div>
         </div>
