@@ -12,7 +12,8 @@
         </div>
         <p class="bs-book__date">{{book.publishedDate | date:'yyyy-MM'}}</p>
         <p class="bs-book__desc">{{book.description}}</p>
-        <button class="btn btn-primary">Add to cart</button>
-        <a routerLink="/books/{{book.id}}" class="btn btn-info" >Details</a>
+
+        <ng-content></ng-content>
+
     </figcaption>
 </figure>
