@@ -5,6 +5,7 @@ import {BehaviorSubject, Observable} from "rxjs";
 import {Credentials} from "../models/credentials";
 import {LoginResponse} from "../models/login-response";
 import {UserProfile} from "../models/user-profile";
+import {switchMap} from "rxjs/operators";
 
 const URL = "https://immense-forest-87642.herokuapp.com/users";
 
@@ -29,16 +30,20 @@ export class AuthService {
     }
 
     //login(credentials: Credentials): Observable<LoginResponse>{
-    login(credentials: Credentials) {
-
-
+    login(credentials: Credentials): Observable<UserProfile> {
         return this.http.post<LoginResponse>(`${URL}/login`, credentials)
-            .subscribe((res: LoginResponse) => {
+            .pipe(switchMap((res: LoginResponse) => {
                 localStorage.setItem('AUTH-TOKEN', res.token);
-                this.http.get<UserProfile>(`${URL}/me`)
-                    .subscribe((userProfile: UserProfile) => {
-                        this.currentUserProfileSubject.next(userProfile);
-                    });
-            });
+                const userProfile$ = this.http.get<UserProfile>(`${URL}/me`);
+                userProfile$.subscribe((userProfile: UserProfile) => {
+                    this.currentUserProfileSubject.next(userProfile);
+                });
+                return userProfile$;
+            }))
+    }
+
+    logout(){
+        localStorage.removeItem('AUTH-TOKEN');
+        this.currentUserProfileSubject.next(null);
     }
 }

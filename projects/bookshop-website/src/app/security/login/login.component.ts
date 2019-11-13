@@ -4,6 +4,7 @@ import {NgForm} from "@angular/forms";
 import {AuthService} from "../../services/auth.service";
 import {LoginResponse} from "../../models/login-response";
 import {Router} from "@angular/router";
+import {UserProfile} from "../../models/user-profile";
 
 @Component({
     selector: 'app-login',
@@ -24,7 +25,7 @@ export class LoginComponent implements OnInit {
         if (form.valid) {
             this.authService.
             login(this.credentials).
-            subscribe((loginResponse: LoginResponse) => {
+            subscribe((userProfile: UserProfile) => {
               this.router.navigate(['home']);
             });
         }

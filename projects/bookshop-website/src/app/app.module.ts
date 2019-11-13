@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome'
 import {NgModule} from '@angular/core';
 
@@ -14,6 +14,7 @@ import {FooterComponent} from './global/footer/footer.component';
 import {HomeModule} from "./home/home.module";
 import {NewsModule} from "./news/news.module";
 import {SecurityModule} from "./security/security.module";
+import {TokenInterceptor} from "./interceptors/http-interceptor";
 
 @NgModule({
     declarations: [
@@ -34,7 +35,11 @@ import {SecurityModule} from "./security/security.module";
         NewsModule,
         SecurityModule,
     ],
-    providers: [],
+    providers: [{
+        provide: HTTP_INTERCEPTORS,
+        useClass: TokenInterceptor,
+        multi:true
+    }],
     bootstrap: [AppComponent]
 })
 export class AppModule {
