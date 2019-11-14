@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome'
-import {NgModule} from '@angular/core';
+import {APP_INITIALIZER, NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -15,6 +15,8 @@ import {HomeModule} from "./home/home.module";
 import {NewsModule} from "./news/news.module";
 import {SecurityModule} from "./security/security.module";
 import {TokenInterceptor} from "./interceptors/http-interceptor";
+import {initUserProfile} from "./initializers/user.profile.initializer";
+import {AuthService} from "./services/auth.service";
 
 @NgModule({
     declarations: [
@@ -36,6 +38,11 @@ import {TokenInterceptor} from "./interceptors/http-interceptor";
         SecurityModule,
     ],
     providers: [{
+        provide: APP_INITIALIZER,
+        useFactory: initUserProfile,
+        multi:true,
+        deps: [AuthService]
+    },{
         provide: HTTP_INTERCEPTORS,
         useClass: TokenInterceptor,
         multi:true

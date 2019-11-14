@@ -34,16 +34,31 @@ export class AuthService {
         return this.http.post<LoginResponse>(`${URL}/login`, credentials)
             .pipe(switchMap((res: LoginResponse) => {
                 localStorage.setItem('AUTH-TOKEN', res.token);
-                const userProfile$ = this.http.get<UserProfile>(`${URL}/me`);
-                userProfile$.subscribe((userProfile: UserProfile) => {
-                    this.currentUserProfileSubject.next(userProfile);
-                });
-                return userProfile$;
+                return this.getUserProfile();
             }))
     }
 
     logout(){
         localStorage.removeItem('AUTH-TOKEN');
         this.currentUserProfileSubject.next(null);
+    }
+
+    initUserProfile(){
+        const token= this.getToken();
+        if(token){
+            return this.getUserProfile().toPromise();
+        }
+    }
+
+    getToken(){
+        return localStorage.getItem('AUTH-TOKEN');
+    }
+
+    getUserProfile(): Observable<UserProfile>{
+        const userProfile$ = this.http.get<UserProfile>(`${URL}/me`);
+        userProfile$.subscribe((userProfile: UserProfile) => {
+            this.currentUserProfileSubject.next(userProfile);
+        });
+        return userProfile$;
     }
 }
