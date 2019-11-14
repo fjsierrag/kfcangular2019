@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { faShoppingCart,faUser } from "@fortawesome/free-solid-svg-icons";
+import {AuthService} from "../../services/auth.service";
+import {Observable} from "rxjs";
+import {UserProfile} from "../../models/user-profile";
 
 @Component({
   selector: 'app-util-nav',
@@ -7,13 +10,20 @@ import { faShoppingCart,faUser } from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./util-nav.component.scss']
 })
 export class UtilNavComponent implements OnInit {
-
+  userProfile$: Observable<UserProfile>;
   faShoppingCart=faShoppingCart;
   faUser=faUser;
 
-  constructor() { }
+  constructor(private authService:AuthService) { }
 
   ngOnInit() {
+    this.userProfile$ = this.authService.getCurrentUerProfile();
+    /*
+    this.authService.getCurrentUerProfile().subscribe((up)=>{
+      this.userProfile$=up;
+    });
+
+     */
   }
 
 }
