@@ -1,0 +1,21 @@
+<section class="bs-admin-books">
+    <div class="bs-container">
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody *ngFor="let book of books">
+                <td>{{book.id}}</td>
+                <td>{{book.title}}</td>
+                <td>
+                    <button class="btn btn-info">Edit</button>
+                    <button class="btn btn-danger">Delete</button>
+                </td>
+            </tbody>
+        </table>
+    </div>
+</section>

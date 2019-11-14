@@ -18,6 +18,8 @@ import {TokenInterceptor} from "./interceptors/http-interceptor";
 import {initUserProfile} from "./initializers/user.profile.initializer";
 import {AuthService} from "./services/auth.service";
 import {ErrorInterceptor} from "./interceptors/error-interceptor";
+import { AdminBooksComponent } from './admin-books/admin-books.component';
+import {AdminBooksModule} from "./admin-books/admin-books.module";
 
 @NgModule({
     declarations: [
@@ -37,6 +39,7 @@ import {ErrorInterceptor} from "./interceptors/error-interceptor";
         HomeModule,
         NewsModule,
         SecurityModule,
+        AdminBooksModule
     ],
     providers: [{
         provide: APP_INITIALIZER,
