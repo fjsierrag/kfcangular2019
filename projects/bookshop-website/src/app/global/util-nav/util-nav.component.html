@@ -6,12 +6,17 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="/account" class="nav-link">
-                <fa-icon [icon]="faUser"></fa-icon>
-                <span *ngIf="userProfile$ | async as userProfile">
+            <span *ngIf="this.isLoggedIn">
+                <a routerLink="/logout" class="nav-link">
+                    <fa-icon [icon]="faUser"></fa-icon>
                     {{userProfile.name}}
-                </span>
-            </a>
+                </a>
+            </span>
+            <span *ngIf="!this.isLoggedIn">
+                <a href="/login" class="nav-link">
+                    <fa-icon [icon]="faUser"></fa-icon>
+                </a>
+            </span>
         </li>
     </ul>
 </nav>

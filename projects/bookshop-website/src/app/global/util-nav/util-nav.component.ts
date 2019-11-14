@@ -10,14 +10,18 @@ import {UserProfile} from "../../models/user-profile";
   styleUrls: ['./util-nav.component.scss']
 })
 export class UtilNavComponent implements OnInit {
-  userProfile$: Observable<UserProfile>;
+  userProfile: UserProfile;
   faShoppingCart=faShoppingCart;
   faUser=faUser;
+  isLoggedIn: boolean = false;
 
   constructor(private authService:AuthService) { }
 
   ngOnInit() {
-    this.userProfile$ = this.authService.getCurrentUerProfile();
+    this.authService.getCurrentUerProfile().subscribe(userProfile=>{
+      this.isLoggedIn = userProfile!==null;
+      this.userProfile=userProfile;
+    });
     /*
     this.authService.getCurrentUerProfile().subscribe((up)=>{
       this.userProfile$=up;
