@@ -19,4 +19,13 @@ export class AdminBooksComponent implements OnInit {
     this.books = await this.bookService.getBooks().toPromise();
     console.log(this.books);
   }
+
+  async removeBook(id){
+    const eliminar = await this.bookService.removeBook(parseInt(id)).subscribe(estado=>{
+      console.log(estado);
+      return {estado:1};
+    });
+
+    console.log(eliminar);
+  }
 }

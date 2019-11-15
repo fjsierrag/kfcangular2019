@@ -18,5 +18,12 @@ export class BookService {
     return this.http.get<Book>(`${BOOKS_URL}/${id}`);
   }
 
+  removeBook(id: number): Observable<any>{
+    return  this.http.delete<any>(`${BOOKS_URL}/${id}`);
+  }
+
+  createBook(book: Book):Observable<Book>{
+    return this.http.post<Book>(`${BOOKS_URL}`, book);
+  }
 }
 
