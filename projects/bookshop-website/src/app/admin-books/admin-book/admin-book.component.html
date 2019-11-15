@@ -25,7 +25,7 @@
                     <div class="form-group">
                         <label for="book-price">Price</label>
                         <input class="form-control" id="book-price"
-                               name="price" [(ngModel)]="book.price" #priceField="ngModel" required>
+                               name="price" [(ngModel)]="book.price" #priceField="ngModel" required number type="number">
                         <div *ngIf="priceField.touched && priceField.errors" class="invalid-feedback">
                             <div *ngIf="priceField.errors.required">Es requerido</div>
                         </div>
@@ -33,7 +33,7 @@
                     <div class="form-group">
                         <label for="book-reviews">Reviews</label>
                         <input class="form-control" id="book-reviews"
-                               name="reviews" [(ngModel)]="book.reviews" #reviewsField="ngModel" required>
+                               name="reviews" [(ngModel)]="book.reviews" #reviewsField="ngModel" required number type="number">
                         <div *ngIf="reviewsField.touched && reviewsField.errors" class="invalid-feedback">
                             <div *ngIf="reviewsField.errors.required">Es requerido</div>
                         </div>
@@ -41,7 +41,7 @@
                     <div class="form-group">
                         <label for="book-rating">Rating</label>
                         <input class="form-control" id="book-rating"
-                               name="rating" [(ngModel)]="book.reviews" #ratingField="ngModel" required>
+                               name="rating" [(ngModel)]="book.rating" #ratingField="ngModel" required number type="number">
                         <div *ngIf="ratingField.touched && ratingField.errors" class="invalid-feedback">
                             <div *ngIf="ratingField.errors.required">Es requerido</div>
                         </div>

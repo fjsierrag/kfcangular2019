@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Book} from "../models/book";
 import {BookService} from "../services/book.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-admin-books',
@@ -9,7 +10,7 @@ import {BookService} from "../services/book.service";
 })
 export class AdminBooksComponent implements OnInit {
   books: Book[] = [];
-  constructor(private bookService: BookService) { }
+  constructor(private bookService: BookService, private router: Router) { }
 
   ngOnInit() {
     this.loadBooks();
@@ -21,9 +22,8 @@ export class AdminBooksComponent implements OnInit {
   }
 
   async removeBook(id){
-    const eliminar = await this.bookService.removeBook(parseInt(id)).subscribe(estado=>{
-      console.log(estado);
-      return {estado:1};
+    const eliminar = await this.bookService.removeBook(parseInt(id)).subscribe(()=>{
+      this.loadBooks();
     });
 
     console.log(eliminar);

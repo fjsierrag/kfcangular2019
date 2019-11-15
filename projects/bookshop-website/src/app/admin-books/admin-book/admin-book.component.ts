@@ -11,7 +11,7 @@ import {Router} from "@angular/router";
 })
 export class AdminBookComponent implements OnInit {
   book: Book = {
-    id: null, author: "", price: 0, rating: 5, reviews: 0, title:''
+     author: "", price: 0, rating: 5, reviews: 0, title:''
   };
   constructor(private bookService: BookService, private router: Router) { }
 
