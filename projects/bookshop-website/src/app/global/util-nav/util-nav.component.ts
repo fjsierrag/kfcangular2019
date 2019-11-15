@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faShoppingCart,faUser } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart,faUser,faBook } from "@fortawesome/free-solid-svg-icons";
 import {AuthService} from "../../services/auth.service";
 import {Observable} from "rxjs";
 import {UserProfile} from "../../models/user-profile";
@@ -13,6 +13,7 @@ export class UtilNavComponent implements OnInit {
   userProfile: UserProfile;
   faShoppingCart=faShoppingCart;
   faUser=faUser;
+  faBook=faBook;
   isLoggedIn: boolean = false;
 
   constructor(private authService:AuthService) { }
