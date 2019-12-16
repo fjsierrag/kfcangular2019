@@ -21,3 +21,8 @@ steps:
     npm install
     ng build --prod
   displayName: 'npm install and build'
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: 'dist/bookshop-website'
+    artifact: 'drop'
+    publishLocation: 'pipeline'
