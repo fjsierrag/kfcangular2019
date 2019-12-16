@@ -25,6 +25,7 @@
             "aot": false,
             "assets": [
               "projects/bookshop-website/src/favicon.ico",
+              "projects/bookshop-website/src/.htaccess",
               "projects/bookshop-website/src/assets"
             ],
             "styles": [
@@ -90,6 +91,7 @@
             "karmaConfig": "projects/bookshop-website/karma.conf.js",
             "assets": [
               "projects/bookshop-website/src/favicon.ico",
+              "projects/bookshop-website/src/.htaccess",
               "projects/bookshop-website/src/assets"
             ],
             "styles": [
